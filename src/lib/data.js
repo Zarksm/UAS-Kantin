@@ -10,15 +10,16 @@ export const menuData = {
 
 export const menuItems = {
   minuman: [
-    { name: "Kopi", price: "Rp 10.000", stok: 0, sold: 50 },
-    { name: "Susu", price: "Rp 8.000", stok: 10, sold: 21 },
+    { name: "Kopi", price: 10000, stok: 0, sold: 50 },
+    { name: "Susu", price: 8000, stok: 10, sold: 21 },
   ],
   makanan: [
-    { name: "Mie", price: "Rp 12.000", stok: 5, sold: 40 },
-    { name: "Nasgor", price: "Rp 15.000", stok: 0, sold: 20 },
+    { name: "Mie", price: 12000, stok: 5, sold: 40 },
+    { name: "Nasgor", price: 15000, stok: 0, sold: 20 },
   ],
   jajanan: [
-    { name: "Cilok", price: "Rp 5.000", stok: 10, sold: 100 },
-    { name: "Bakso", price: "Rp 10.000", stok: 0, sold: 15 },
+    { name: "Cilok", price: 5000, stok: 10, sold: 100 },
+    { name: "Bakso", price: 10000, stok: 0, sold: 15 },
   ],
 };
+

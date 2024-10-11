@@ -11,7 +11,11 @@ const Menu = () => {
 
   // Function to add items to the cart
   const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]); // Add the new item to the cart
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart, item];
+      localStorage.setItem("cart", JSON.stringify(updatedCart)); // Save to localStorage
+      return updatedCart;
+    });
   };
 
   return (
