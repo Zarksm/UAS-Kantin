@@ -5,7 +5,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-[#0077B6] text-white p-4">
+    <header className="p-4 bg-slate-100">
       <h1 className="text-2xl font-bold">Dashboard</h1>
     </header>
   );

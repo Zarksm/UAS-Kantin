@@ -7,7 +7,7 @@ const OrdersLayout = ({ children }) => {
   return (
     <div className="flex">
       <div className="flex-1">
-        <main className="p-6">{children}</main>
+        <main className="p-2">{children}</main>
       </div>
     </div>
   );

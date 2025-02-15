@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CategoryButton from "./CategoryButton";
 import MenuItem from "./MenuItem";
 import Cart from "./Cart"; // Import the Cart component
@@ -9,14 +9,27 @@ const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [cart, setCart] = useState([]); // Initialize cart as an empty array
 
-  // Function to add items to the cart
+  useEffect(() => {
+    const storedCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    setCart(storedCart);
+  }, []);
+
   const addToCart = (item) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart, item];
-      localStorage.setItem("cart", JSON.stringify(updatedCart)); // Save to localStorage
+      sessionStorage.setItem("cart", JSON.stringify(updatedCart)); // Use sessionStorage instead of localStorage
       return updatedCart;
     });
   };
+
+  // Function to add items to the cart
+  // const addToCart = (item) => {
+  //   setCart((prevCart) => {
+  //     const updatedCart = [...prevCart, item];
+  //     localStorage.setItem("cart", JSON.stringify(updatedCart)); // Save to localStorage
+  //     return updatedCart;
+  //   });
+  // };
 
   return (
     <div>
@@ -39,18 +52,18 @@ const Menu = () => {
               selectedCategory.slice(1)
             : ""}
         </h2>
-        <div className="mt-4 md:flex gap-3">
+        <div className="mt-4 md:flex gap-3 w-full flex-wrap">
           {selectedCategory ? (
             menuItems[selectedCategory]?.map((item, index) => (
               <MenuItem key={index} item={item} addToCart={addToCart} /> // Pass addToCart to MenuItem
             ))
           ) : (
-            <p>Select a category to view menu items.</p>
+            <p>Pilih kategori untuk melihat menu.</p>
           )}
         </div>
       </div>
       {/* Conditionally render Cart if there are items */}
-      {cart && cart.length > 0 && <Cart cart={cart} />}{" "}
+      <div>{cart && cart.length > 0 && <Cart cart={cart} />} </div>
       {/* Show Cart if cart has items */}
     </div>
   );

@@ -9,7 +9,9 @@ module.exports = {
 	theme: {
 	  extend: {
 		fontFamily: {
-		  poppins: ['Poppins', 'Arial', 'Helvetica', 'sans-serif'], // Use Poppins as the primary sans-serif font
+		  poppins: ['Poppins', 'Arial', 'Helvetica', 'sans-serif'], // Default font
+		  geistSans: ['var(--font-geist-sans)', 'sans-serif'],      // GeistSans font
+		  geistMono: ['var(--font-geist-mono)', 'monospace'],       // GeistMono font
 		},
 		colors: {
 		  background: 'var(--background)',
@@ -23,5 +25,4 @@ module.exports = {
 	  },
 	},
 	plugins: [require("tailwindcss-animate")],
-  };
-  
+};

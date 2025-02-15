@@ -1,0 +1,432 @@
+13.1 INTRODUCTION
+
+    As we saw in Chapter 3, technology does not exist in a vacuum. It is used within a
+    specific context, and is influenced by many factors within that context. The different
+    people affected by the introduction of a system are known as stakeholders and their
+    needs can be both complex and conflicting. In addition, we need to understand how
+    the introduction of the system might actually change the organizational and work
+    practices that are currently in place and what the impact of this might be.
+    In this chapter we look in more detail at the socio-organizational context of use
+    and discuss some of the generic issues that can affect the acceptance of technology
+    in organizations. We then look at a number of approaches to modeling the socioorganizational context and the requirements of the stakeholders within it.
+    Requirements capture is an important part of all software engineering methodologies but often this activity focusses primarily on the functional requirements of the
+    system – what the system must be able to do – with less emphasis on non-functional
+    human issues such as usability and acceptability. Even where such matters are
+    considered, they may reflect only the management’s view of the user’s needs rather
+    than gathering information from the users themselves. Stakeholder requirements
+    modeling redresses this balance by identifying the needs of all stakeholders, including the user and anyone else affected by the system, within the context in which it
+    will be used.
+    We will begin this chapter by discussing some of the organizational issues that
+    arise when new technological solutions are introduced. We then outline a number of
+    models and methods that can be used to capture this broader view of stakeholder
+    requirements, including socio-technical models, soft systems methodology, participatory design and the ethnographic approach.
+
+    13.1 ORGANIZATIONAL ISSUES
+        In this section, we shall look at some of the organizational issues that affect the
+        acceptance and relevance of information and communication systems. These factors
+        often sit ‘outside’ the system as such, and may involve individuals who never use it.
+        Yet it is often these factors more than any other that determine the success or failure
+        of computer systems. Many systems supporting work in organizations are supporting groups of workers, but this may be through specialist groupware systems (see
+        Chapter 19) or through shared data or processes.
+
+    13.2.1 Cooperation or conflict?
+        The term ‘computer-supported cooperative work’ (CSCW) seems to assume that
+        groups will be acting in a cooperative manner. This is obviously true to some extent;
+        even opposing football teams cooperate to the extent that they keep (largely) within
+        the rules of the game, but their cooperation only goes so far. People in organizations and groups have conflicting goals, and systems that ignore this are likely to fail
+        spectacularly.
+        Imagine that an organization is already highly computerized, the different departments all have their own systems and the board decides that an integrated information system is needed. The production manager can now look directly at stocks
+        when planning the week’s work, and the marketing department can consult the sales
+        department’s contact list to send out marketing questionnaires. All is rosy and the
+        company will clearly run more efficiently – or will it?
+        The storekeeper always used to understate stock levels slightly in order to keep
+        an emergency supply, or sometimes inflate the quoted levels when a delivery was due
+        from a reliable supplier. Also, requests for stock information allowed the storekeeper
+        to keep track of future demands and hence plan future orders. The storekeeper has
+        now lost a sense of control and important sources of information. Members of the
+        sales department are also unhappy: their contacts are their livelihood. The last thing
+        they want is someone from marketing blundering in and spoiling a relationship with
+        a customer built up over many years. Some of these people may resort to subverting
+        the system, keeping ‘sanitized’ information online, but the real information in personal files. The system gradually loses respect as the data it holds is incorrect,
+        morale in the organization suffers and productivity drops. The board gets worried
+        and meets to consider upgrading the computer system!
+        Before installing a new computer system, whether explicitly ‘cooperative’ or not,
+        one must identify the stakeholders who will be affected by it. These are not just the
+        immediate users, but anyone whose jobs will be altered, who supplies or gains information from it, or whose power or influence within the organization will increase or
+        decrease. It will frequently be the case that the formal ‘client’ who orders the system
+        falls very low on the list of those affected. Be very wary of changes that take power,
+        influence or control from some stakeholders without returning something tangible
+        in their place.
+
+    13.2.2 Changing power structures
+        The identification of stakeholders will uncover information transfer and power relationships that cut across the organizational structure. Indeed, all organizations have
+        these informal networks that support both social and functional contacts. However,
+        the official lines of authority and information tend to flow up and down through line
+        management. New communications media may challenge and disrupt these formal
+        managerial structures.
+        The physical layout of an organization often reflects the formal hierarchy: each
+        department is on a different floor, with sections working in the same area of an
+        office. If someone from sales wants to talk to someone from marketing then one of
+        them must walk to the other’s office. Their respective supervisors can monitor the
+        contact. Furthermore, the physical proximity of colleagues can foster a sense of 
+        departmental loyalty. An email system has no such barriers; it is as easy to ‘chat’ to
+        someone in another department as in your own. This challenges the mediating and
+        controlling role of the line managers.
+        Furthermore, in face-to-face conversation, the manager can easily exert influence
+        over a subordinate: both know their relative positions and this is reflected in the
+        patterns of conversation and in other non-verbal cues. Email messages lose much
+        of this sense of presence and it is more difficult for a manager to exercise authority.
+        The ‘levelling’ effect even makes it possible for subordinates to direct messages
+        ‘diagonally’ across the hierarchy, to their manager’s peers, or, even worse, to their
+        manager’s manager!
+        Many organizations are moving toward flatter management structures anyway, so
+        from a strategic viewpoint these effects may be acceptable. But can the organization
+        cope with a disaffected junior management during the transition? For other organizations the effects may be less welcome and the system dropped or heavily regulated.
+        In one case, an email system was introduced and was agreed to be functioning well,
+        but the management, feeling a loss of control and suspicion over their subordinates’
+        communications, introduced logging so that all email messages could be monitored.
+        The system quickly fell into disuse. Logging of email is becoming more widespread
+        with employers using it to identify cases of system ‘abuse’ by employees. But such
+        activity must be handled carefully: it is as likely to backfire on the management by
+        reducing the productive use of email as it is to have the desired effect.
+        Technology can be an important vector of social change, but if violent reaction is
+        to be avoided, the impact of the technology must be assessed before it is introduced.
+        In the short term, solutions must be carefully matched to the existing social and
+        organizational structures.
+
+    13.2.3 The invisible worker
+        The ability to work and collaborate at a distance can allow functional groups
+        to be distributed over different sites. This can take the form of cross-functional
+        neighbourhood centers, where workers from different departments do their jobs in
+        electronic contact with their functional colleagues. Alternatively, distributed groupware can allow the true home-based teleworker to operate on similar terms to an
+        office-based equivalent. The ecological and economic advantages of such working
+        practices are now becoming well established, and it seems that communications and
+        CSCW technology can overcome many of the traditional barriers.
+        In fact, a closer examination reveals that the barriers to such working are not
+        technological but managerial. First of all, management style may make remote
+        working all but impossible. If the approach in an organization is ‘management by
+        presence’, that is you know someone is working because they are in the office, then
+        there is no way a remote worker is going to be trusted. If, on the other hand, the style
+        is ‘management by objectives’, that is you know your subordinates are working
+        because they are doing their jobs and producing results, then remote working is
+        not so problematical. Even where remote working is accepted, the lack of physical
+        presence can be a problem. When the time comes for promotion, the present
+        employee may seem more worthy than the distant one – not because of any objective criteria, but because presence increases perceived worth.
+        We can see that, again, social and managerial relationships completely dominate
+        technological considerations. Many video-based groupware systems are intended to
+        create a sense of engagement, of active participation and social presence. Whether
+        this will be sufficient to overcome ingrained attitudes remains to be seen.
+
+    13.2.4 Who benefits?
+        One frequent reason for the failure of information systems is that the people who get
+        the benefits from the system are not the same as those who do the work. One example, which we discuss in more detail in Chapter 19, is structured message systems
+        such as Lens. In these systems the sender has to do work in putting information into
+        fields appropriately, but it is the recipient who benefits. Another example is shared
+        calendars. The beneficiary of the system is a manager who uses the system to arrange
+        meeting times, but whose personal secretary does the work of keeping the calendar
+        up to date. Subordinates are less likely to have secretarial support, yet must keep up
+        the calendar with little perceived benefit. Of course, chaos results when a meeting is
+        automatically arranged and the subordinates may have to rearrange commitments
+        that have not been recorded on the system. The manager may force use by edict or
+        the system may simply fall into disuse. Many such groupware systems are introduced
+        on a ‘see if it works’ basis, and so the latter option is more likely.
+        The lesson is that information systems should aim for some level of symmetry.
+        If you have to do work for the system, you should obtain some benefit from it.
+        For the shared calendar, this might involve improving the personal user interface, so
+        that there are definite advantages in using the online system to plan your time rather
+        than using paper (it could even print out Filofax pages). In addition, if people use
+        electronic organizers one could consider integrating these into the system.
+
+    13.2.5 Free rider problem
+        Even where there is no bias toward any particular people, a system may still not
+        function symmetrically, which may be a problem, particularly with shared communication systems. One issue is the free rider problem. Take an electronic conferencing system. If there is plenty of discussion of relevant topics then there are
+        obvious advantages to subscribing and reading the contributions. However, when
+        considering writing a contribution, the effort of doing so may outweigh any benefits.
+        The total benefit of the system for each user outweighs the costs, but for any particular decision the balance is overturned.
+        To see this situation in a different context imagine an eccentric philanthropist who
+        has gathered three strangers into a room. They are invited to throw money into a pot
+        in the center. When they have done so, the philanthropist will double the money
+        in the pot and then divide it up between them and send them on their way. Each stranger reasons ‘If I put in three pennies, then our benefactor will double this to six.
+        These will be distributed between three of us, so I will have only two returned to me.’
+        Clearly, unless the strangers can come to some understanding none of them will put
+        any money in the pot, and none will benefit.
+        A few free riders in a conference system are often not a problem, as the danger is
+        more likely from too much activity. In addition, in electronic conferences the patterns of activity and silence may reflect other factors such as expertise. However, it is
+        easy for the number of free riders gradually to increase and the system slide into disuse. It is hard to enforce equal use, except by restrictive schemes such as round-robin
+        contributions (everyone contributes something however short). In the real world,
+        such problems are often solved by social pressure, and the free rider reacts to the collective censure of the group. Increasing the visibility of participants’ contributions
+        might also help these social mechanisms. For example, one could display an activity
+        meter showing the number of contributions from each subscriber. Of course, people
+        may then choose not to subscribe in the first place!
+
+    13.2.6 Critical mass
+        Another issue related to the free rider problem is the need to develop a critical mass.
+        When telephones were only in public places, their use as a form of pervasive interpersonal communication was limited. However, once a large number of people
+        have telephones in their homes it becomes worthwhile paying to have a telephone
+        installed. In cost/benefit terms, the early subscribers probably have a smaller benefit
+        than the cost. Only when the number of subscribers increases beyond the critical
+        mass does the benefit for all dominate the cost (see Figure 13.1). The situation for
+        conferencing systems and email is, of course, very similar.
+        We can learn something from the lessons of the telephone system and other
+        successful technologies (but remember, telephones took the best part of 100 years
+        to become pervasive in affluent countries). The telephone was useful for subgroups before it became beneficial for all. Even when only a small proportion of the population had personal telephones, they still formed a significant proportion of
+        their social group, so these cliques of use could grow gradually over time.
+        The same is true of email. Even a group of two or three people in an organization
+        can use email effectively between themselves. If an organization consists of widening
+        circles of highly connected subgroups, then take-up can grow from the core to the
+        wider group. Of course, the benefits increase as it becomes pervasive, but even a tiny
+        user group ensures that the benefits outweigh the costs. Clearly, we must design any
+        new system so that it has benefits even when its user population is small.
+
+    13.2.7 Automating processes – workflow and BPR
+        The major task in many organizations is moving pieces of paper around. An order
+        is received by phone and an order form filled in by the sales executive. The order
+        form is passed to accounts who check the credit rating and if all is okay it is passed
+        on to stores who check availability and collect the order together at the picking line.
+        When the order is dispatched, a delivery note is packed with the order and a copy is
+        returned to accounts, who send an invoice to the customer.
+        Organizations have many such processes, and workflow systems aim to automate
+        much of the process using electronic forms, which are forwarded to the relevant
+        person based on pre-coded rules. Some workflow systems are built using specialpurpose groupware, often based on a notation for describing the desired workflow.
+        Coordinator (see Section 14.3.6) is an example of a workflow system where the rules
+        are heavily influenced by speech act theory. In addition, workflow systems may be
+        implemented using more general structured message systems, including Lotus Notes
+        (see the Design Focus in this section).
+        The rigid form of a typical workflow system is an example of global structuring
+        (see Chapter 19 for more details). The danger with any form of global structuring is
+        that it may conflict with or inhibit more informal and less structured patterns of
+        activity which also contribute to the organization’s free running.
+        A more radical approach to organizational processes is found in business process
+        re-engineering (BPR). Traditionally, organizations have been structured around
+        functions: sales, accounts, stores, manufacturing. However, the purpose of an organization can be seen in terms of key business processes. The ordering/delivery process described above is a typical and important example. In BPR these processes
+        are recorded and analyzed. Problems in the current process are noted and the
+        whole process may be redesigned in order to make the path of the process more
+        efficient. For example, instead of sending an order to the accounts department to
+        approve, a list of customer credit limits could be given to the sales executives. They
+        could then check the credit rating of the customer whilst on the phone and only
+        forward the order to accounts if there are any unusual problems. Finally, and most
+        radically, the whole structure of the organization may be modified to reflect and
+        support the key processes more closely. Typically, this involves stripping layers of
+        middle management. BPR as an issue engenders zealots and reactionaries in equal
+        measure.
+
+    13.2.8 Evaluating the benefits
+        We have seen several problems that can arise from the mismatch between information systems and organizational and social factors. Let us assume that we have a system in place – and it has not fallen apart at the seams. Everyone seems happy with it
+        and there are no secret resentments. Now it is time to count the cost – it was an
+        expensive system to buy and install, but was it worth it?
+        This is an almost impossible question to answer. The benefits from cooperative
+        systems, especially organization-wide systems such as email or electronic conferencing, are in terms of job satisfaction or more fluid information flow. Some, such as
+        the video wall (see Chapter 19), are expected primarily to help social contact within
+        the organization. It may be possible to measure contentment and job satisfaction using attitude questionnaires (see Chapter 9), but any hard economic benefit will
+        be so diffuse as to be unquantifiable.
+        However, a similar argument could be (and has been) framed for computer use
+        in general. The benefits are difficult to quantify, but, over time, it has become clear
+        that the competitive edge of information technology is necessary for survival in the
+        modern world. Perhaps the same will be said of cooperative systems in a few years.
+
+
+13.3 CAPTURING REQUIREMENTS
+
+    As we have already seen, problems can arise when a system is introduced without
+    a full understanding of all the people who will be affected by it. But how can we
+    better understand and support complex organizational structures, workgroups and
+    potentially conflicting stakeholder needs? We begin by capturing and analyzing
+    requirements, but we need to do this within the work context, taking account of the
+    complex mix of concerns felt by different stakeholders and the structures and processes operating in the workgroups.
+    In this section we consider several approaches: socio-technical modeling, soft
+    systems methodology, participatory design, ethnographic methods and contextual
+    inquiry. All are aimed at understanding the reality of work contexts and the perspectives of different stakeholders. All recognize that technology can be successfully
+    deployed only if it is done with an understanding of the context of use, but each takes
+    a slightly different approach to the problem. Before we look in more detail at these
+    approaches we need to clarify what we mean when we talk about ‘stakeholders’.
+    
+    13.3.1 Who are the stakeholders?
+        Understanding stakeholders is key to many of the approaches to requirements capture, since in an organizational setting it is not simply the end-user who is affected
+        by the introduction of new technology. Imagine that a new billing system is to be
+        introduced by a local gas supplier. Who will be affected by this decision? Obviously,
+        the people who are responsible for producing and sending out bills – they will be
+        the ones using the system directly. But where do they get the information from
+        to produce the bills? To whom do they send the bills? Who determines the level
+        of charging and on what grounds? Who stands to make a profit from increased
+        revenue? Who will suffer if customers choose to switch supplier due to the improved
+        service? Meter readers, customers, managers, regulators, shareholders and competitors are all stakeholders in the system. We need approaches that will capture the
+        complexity of their concerns, which may be in conflict with each other.
+        A stakeholder, therefore, can be defined as anyone who is affected by the success
+        or failure of the system. It can be useful to distinguish different categories of stakeholder, and the following categorization from the CUSTOM approach (see [200]) is
+        helpful for this: Primary stakeholders are people who actually use the system – the end-users.
+        Secondary stakeholders are people who do not directly use the system, but receive
+        output from it or provide input to it (for example, someone who receives a report
+        produced by the system).
+        Tertiary stakeholders are people who do not fall into either of the first two categories
+        but who are directly affected by the success or failure of the system (for example,
+        a director whose profits increase or decrease depending on the success of the
+        system).
+        Facilitating stakeholders are people who are involved with the design, development
+        and maintenance of the system.ble. However, the reality is that usually stakeholder needs are in conflict with each
+        other. Sometimes this does not matter: a company is unlikely to be too concerned
+        that its competitors’ requirement to maintain advantage over it is under threat by
+        the new system (though they need to be aware to monitor how effectively they are
+        maintaining their advantage). However, sometimes it does matter. In the example
+        above, the airline booking system must be usable by travel agency staff but must
+        also fulfill the customer need to find an appropriate ticket at the right price. If it
+        fails in this, the whole system will fail, as the customer will go elsewhere and business
+        will be lost.
+        As a general rule, the priority of stakeholder needs diminishes as you go down the
+        categories. So primary stakeholders usually take priority over the others. However,
+        this is not always the case. Imagine designing the control panel of a hospital life support machine. The primary stakeholders will be medical staff monitoring a patient’s
+        condition. But who, in fact, has the greatest interest in this system working? Surely it
+        is the patient, whose life is dependent on the system’s success? In this case the tertiary
+        stakeholder is of vital importance.
+        All of the approaches we are considering here are concerned with understanding
+        stakeholders within their organizational context.
+
+        13.3.2 Socio-technical models
+            Early in the twentieth century, studies of work focussed on how humans needed
+            to adapt to technical innovations. Technological determinism, the view that social
+            change is primarily dictated by technology, with human and social factors being
+            secondary concerns, was prevalent. The socio-technical systems view came about
+            to counter this technology-centric position, by stressing that work systems were
+            composed of both human and machine elements and that it was the interrelationship between these that should be central.
+            Socio-technical models for interactive systems are therefore concerned with technical, social, organizational and human aspects of design. They recognize the fact
+            that technology is not developed in isolation but as part of a wider organizational
+            environment. It is important to consider social and technical issues side by side
+            so that human issues are not overruled by technical considerations.
+            The key focus of the socio-technical approach is to describe and document the
+            impact of the introduction of a specific technology into an organization. Methods
+            vary but most attempt to capture certain common elements:
+            n The problem being addressed: there is a need to understand why the technology
+            is being proposed and what problem it is intended to solve.
+            n The stakeholders affected, including primary, secondary, tertiary and facilitating,
+            together with their objectives, goals and tasks.
+            n The workgroups within the organization, both formal and informal.
+            n The changes or transformations that will be supported.
+            n The proposed technology and how it will work within the organization.
+            n External constraints and influences and performance measures.
+            Information is gathered using methods such as interviews, observation, focus groups
+            and document analysis. The methods guide this information-gathering process and
+            help the analyst to make sense of what is discovered. By attempting to understand
+            these issues, socio-technical approaches aim to provide a detailed view of the role
+            technology will play and the requirements of successful deployment.
+            We will compare two approaches to illustrate how this may work in practice.
+
+            Open System Task Analysis (OSTA)
+            OSTA [116] is an alternative socio-technical approach, which attempts to describe
+            what happens when a technical system is introduced into an organizational work
+            environment. Like CUSTOM, OSTA specifies both social and technical aspects of the
+            system. However, whereas in CUSTOM these aspects are framed in terms of stakeholder perspectives, in OSTA they are captured through a focus on tasks.
+            OSTA has eight main stages:
+            1. The primary task which the technology must support is identified in terms of
+            users’ goals.
+            2. Task inputs to the system are identified. These may have different sources and
+            forms that may constrain the design.
+            3. The external environment into which the system will be introduced is described,
+            including physical, economic and political aspects.
+            4. The transformation processes within the system are described in terms of actions
+            performed on or with objects.
+            5. The social system is analyzed, considering existing work-groups and relationships
+            within and external to the organization.
+            6. The technical system is described in terms of its configuration and integration
+            with other systems.
+            7. Performance satisfaction criteria are established, indicating the social and technical requirements of the system.
+            8. The new technical system is specified.
+            OSTA uses notations familiar to designers, such as data flow diagrams and textual
+            descriptions.
+
+            13.3.3 Soft systems methodology
+                The socio-technical models we have looked at focus on identifying requirements
+                from both human and technical perspectives, but they assume a technological solution is being proposed. Soft systems methodology (SSM) arises from the same tradition but takes a view of the organization as a system of which technology and people
+                are components. There is no assumption of a particular solution: the emphasis is
+                rather on understanding the situation fully. SSM was developed by Checkland [66] to help designers reach an understanding of the context of technological developments and the influences and concerns that exist within the system under consideration. SSM has seven stages (see Figure 13.2). A distinction is made between the
+                ‘real-world’ stages (1–2, 5–7) and the systems stages (3–4).
+                We will outline the stages here but will focus on those that help capture requirements. The first stage of SSM is the recognition of the problem and initiation of
+                analysis. This is followed by a detailed description of the problem situation: developing a rich picture. This will include all the stakeholders, the tasks they carry out and
+                the groups they work in, the organizational structure and its processes and the issues
+                raised by each stakeholder. Any knowledge elicitation techniques can be used to
+                gather the information to build the rich picture, including observation (and video
+                and audio recording), structured and unstructured interviews and questionnaires,
+                and workshops incorporating such activities as role play, simulations and critical
+                incident analysis. In general, less structured approaches are used initially to avoid
+                artificially constraining the description. The rich picture can be in any style – there
+                are no right or wrong answers – but it should be clear and informative to the
+                designer. Certain conventions are widely accepted, however. Speech balloons are
+                used to represent stakeholder issues; crossed swords represent conflicts within the
+                system; and the eye represents external influences or observers. Figure 13.3 shows an
+                example of a rich picture with all of these elements.
+                Rich pictures are in themselves useful tools to aid understanding of a situation.
+                The rich picture is informal and relatively intuitive. It captures succinctly the potentially conflicting interests of the various stakeholders and the other influences on a
+
+                13.3.4 Participatory design
+                    Participatory design is a philosophy that encompasses the whole design cycle. It is
+                    design in the workplace, where the user is involved not only as an experimental
+                    subject or as someone to be consulted when necessary but as a member of the
+                    design team. Users are therefore active collaborators in the design process, rather
+                    than passive participants whose involvement is entirely governed by the designer.
+                    The argument is that users are experts in the work context and a design can only
+                    be effective within that context if these experts are allowed to contribute actively
+                    to the design process. In addition, introduction of a new system is liable to change
+                    the work context and organizational processes, and will only be accepted if these
+                    changes are acceptable to the user. Participatory design therefore aims to refine system requirements iteratively through a design process in which the user is actively
+                    involved.
+                    Participatory design has three specific characteristics. It aims to improve the work
+                    environment and task by the introduction of the design. This makes design and
+                    evaluation context or work oriented rather than system oriented. Secondly, it is characterized by collaboration: the user is included in the design team and can contribute
+                    to every stage of the design. Finally, the approach is iterative: the design is subject to
+                    evaluation and revision at each stage.
+                    The participatory design process utilizes a range of methods to help convey information between the user and designer. They include
+                    Brainstorming This involves all participants in the design pooling ideas. This is
+                    informal and relatively unstructured although the process tends to involve ‘onthe-fly’ structuring of the ideas as they materialize. All information is recorded
+
+                    13.3.5 Ethnographic methods
+                    All of the approaches considered so far have included some level of consultation
+                    and observation of the stakeholders. However, the focus of this has been on
+                    gathering stakeholder perspectives rather than specifically studying actual work
+                    practice. It can be argued that work can only be understood and studied in context.
+                    This is consonant with the ideas of distributed cognition. Taking a worker away
+                    from the workplace changes the very nature of the worker’s actions. Real action
+                    is situated action; it occurs in interaction with the materials and people of the
+                    workplace [334]. In extremis, it is claimed that an action can only be understood
+                    in the place, in the social situation, and at the time at which it occurred. Such a
+                    level of contextualization is obviously useless for design, and its advocates will
+                    in practice generalize from their observations, even if they ostensibly eschew such
+                    generalization.
+                    Even if one does not wish to take such an extreme view, it is clear that studying
+                    workers in their own situations is extremely worthwhile.
+                    Many branches of sociology and anthropology have long recognized that one
+                    cannot study people divorced from their social and cultural context. In particular,
+                    ethnography has become very influential, particularly in the study of group systems.
+                    We were introduced to ethnography briefly in Chapter 9 but here we will consider
+                    it in a little more detail, and discuss an approach to contextual requirements capture that reflects the ethnographic tradition but has been developed to be highly
+                    practical.
+                    Ethnography is based on very detailed recording of the interactions between
+                    people and between people and their environment. It has a special focus on social
+                    relationships and how they affect the nature of work. The ethnographer does not
+                    enter actively into the situation, and does not see things from a particular person’s
+                    viewpoint. However, an aim is to be encultured, to understand the situation from
+                    within its own cultural framework. Culture here means that of the particular workgroup or organization, rather than that of society as a whole. Ethnographers try
+                    to take an unbiased and open-ended view of the situation. They report and do not
+                    like to speculate, so it is often unclear how well their approach can contribute to the
+                    design of new systems.
+
+13.4 SUMMARY
+
+We have seen that organizational factors can make or break the deployment of
+information and communications technology. Any computer system may interfere
+with the existing authority and social relationships within an organization. There
+may be a mismatch between those who benefit, and those who do the work. Even
+where there is no in-built bias, the free rider may put in little personal effort,
+benefiting from the work of the rest of the group.
+
+We need to identify stakeholders who will be affected directly or indirectly. In
+particular, junior and middle management may feel they lose control and authority
+by the introduction of electronic communications. Another example is teleworking,
+which is made easier by advances in telecommunications, but which makes the
+worker less visible to management. Even where a system is perceived to be useful, it
+is hard to quantify its benefits as they are diffused throughout the organization.
+In this chapter, we have discussed a selection of socio-organizational approaches
+to capturing stakeholder requirements, including socio-technical models, soft
+systems methodology, participatory design and ethnographic approaches. Sociotechnical models focus on representing both the human and technical sides of the
+system in parallel to reach a solution that is compatible with each. SSM models
+the organization, of which the user is part, as a system. Participatory design sees the
+user as active not only in using the technology but in designing it. Ethnography, on
+the other hand, views the user in context, attempting to collect an unbiased view of
+the user’s work culture and practice.

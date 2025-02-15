@@ -12,8 +12,10 @@ const MenuItem = ({ item, addToCart }) => (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-center">
         <IoBagAddOutline
-          className="cursor-pointer hover:text-[#0077B6]"
-          onClick={() => addToCart(item)} // Add item to cart on click
+          className={`cursor-pointer hover:text-[#0077B6] ${
+            item.stok === 0 ? "cursor-not-allowed text-gray-400" : ""
+          }`}
+          onClick={() => item.stok > 0 && addToCart(item)} // Only add to cart if stock > 0
         />
       </div>
       <p className="text-xs text-slate-400">Stok: {item.stok}</p>
