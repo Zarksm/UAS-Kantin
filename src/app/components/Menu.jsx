@@ -58,7 +58,7 @@ const Menu = () => {
               <MenuItem key={index} item={item} addToCart={addToCart} /> // Pass addToCart to MenuItem
             ))
           ) : (
-            <p>Pilih kategori untuk melihat menu.</p>
+            <p>Pilih kategori untuk melihat menu. tesss</p>
           )}
         </div>
       </div>
