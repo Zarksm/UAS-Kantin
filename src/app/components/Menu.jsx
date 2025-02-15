@@ -9,19 +9,19 @@ const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [cart, setCart] = useState([]); // Initialize cart as an empty array
 
+  // Load cart from localStorage on mount
   useEffect(() => {
-    const storedCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
   }, []);
 
   const addToCart = (item) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart, item];
-      sessionStorage.setItem("cart", JSON.stringify(updatedCart)); // Use sessionStorage instead of localStorage
+      localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update localStorage
       return updatedCart;
     });
   };
-
   // Function to add items to the cart
   // const addToCart = (item) => {
   //   setCart((prevCart) => {
