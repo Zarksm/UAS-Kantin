@@ -4,9 +4,9 @@ import { IoFastFoodOutline } from "react-icons/io5";
 
 export const menuData = {
   categories: [
-    { id: "minuman", name: "Minuman", icon: LuCoffee, menuCount: 15 },
-    { id: "makanan", name: "Makanan", icon: LuSoup, menuCount: 5 },
-    { id: "jajanan", name: "Jajanan", icon: IoFastFoodOutline, menuCount: 15 },
+    { id: "minuman", name: "minuman", icon: LuCoffee},
+    { id: "makanan", name: "makanan", icon: LuSoup },
+    { id: "jajanan", name: "jajanan", icon: IoFastFoodOutline},
   ],
 };
 

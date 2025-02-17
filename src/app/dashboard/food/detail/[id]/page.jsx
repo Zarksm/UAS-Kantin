@@ -1,30 +1,56 @@
 "use client";
-// app/dashboard/food/detail/[id]/page.js
-import React, { useState } from "react";
-import { useParams } from "next/navigation";
-import { foods } from "@/lib/data";
+
+import React, { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { supabase } from "@/lib/db";
 import Link from "next/link";
 import Form from "@/app/components/Form";
 
 const DetailFood = () => {
   const params = useParams();
   const { id } = params;
+  const router = useRouter();
 
-  // Find the food item by id
-  const foodItem = foods.find((item) => item.id === parseInt(id, 10));
-  const [food, setFood] = useState(foodItem);
+  const [food, setFood] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!food) {
-    return <div>Food item not found</div>;
-  }
+  const fetchFood = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("foods")
+      .select("*")
+      .eq("id", id)
+      .single();
 
-  // Handle form submission to update food details
-  const handleFormSubmit = (updatedFood) => {
-    // Update local state with the updated food details
-    setFood(updatedFood);
+    if (error) {
+      console.error("Error fetching food:", error);
+    } else {
+      setFood(data);
+    }
+    setLoading(false);
+  };
 
-    // You can add logic here to update the food item in your data source
-    console.log("Updated food details:", updatedFood);
+  useEffect(() => {
+    if (id) fetchFood();
+  }, [id]);
+
+  if (loading) return <p>Loading...</p>;
+  if (!food) return <p>Food not found</p>;
+
+  const handleFormSubmit = async (updatedFood) => {
+    const { error } = await supabase
+      .from("foods")
+      .update(updatedFood)
+      .eq("id", id);
+
+    if (error) {
+      console.error("Failed to update food:", error);
+      alert("Error while updating food. Please try again.");
+    } else {
+      alert("Food updated successfully!");
+      fetchFood(); // Fetch updated food data
+      router.push("/dashboard/food"); // Redirect after update
+    }
   };
 
   return (
@@ -35,8 +61,6 @@ const DetailFood = () => {
       >
         &larr; Back to Menu
       </Link>
-
-      {/* Render the Form component and pass food data */}
       <Form food={food} onSubmit={handleFormSubmit} />
     </div>
   );

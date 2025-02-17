@@ -1,8 +1,8 @@
-// components/CategoryButton.js
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { menuData } from "@/lib/data"; // Assuming menuData is in the data.js file
 
-const CategoryButton = ({ category, isSelected, onClick }) => {
-  const Icon = category.icon;
+const CategoryButton = ({ category, isSelected, onClick, menuCount }) => {
+  const Icon = category.icon; // Assuming you have an icon for each category
 
   return (
     <div
@@ -20,7 +20,8 @@ const CategoryButton = ({ category, isSelected, onClick }) => {
       </div>
       <div>
         <p className="text-sm">{category.name}</p>
-        <p className="text-sm text-slate-400">{category.menuCount} Menu</p>
+        <p className="text-sm text-slate-400">{menuCount} Menu</p>{" "}
+        {/* Display count */}
       </div>
     </div>
   );

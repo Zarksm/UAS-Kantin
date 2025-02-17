@@ -1,81 +1,118 @@
+"use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Form = ({ food, onSubmit }) => {
-  const [name, setName] = useState(food.name);
-  const [price, setPrice] = useState(food.price);
-  const [description, setDescription] = useState(food.description);
-  const [stok, setStok] = useState(food.stok);
+  const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: food.name || "",
+    description: food.description || "",
+    price: food.price || "",
+    stock: food.stock || "",
+    category: food.category || "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Pass the updated data back to the parent component or handle update logic here
-    onSubmit({ ...food, name, price, description, stok });
+    setLoading(true);
+
+    try {
+      const res = await fetch(`/api/foods/${food.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const responseText = await res.text();
+      console.log(responseText); // Log response for debugging
+
+      if (res.ok) {
+        try {
+          const data = JSON.parse(responseText); // Only parse if OK
+          onSubmit(data);
+          router.push("/dashboard/food"); // Redirect after update
+        } catch (error) {
+          console.error("Failed to parse response:", error);
+          alert("Error while updating food.");
+        }
+      } else {
+        try {
+          const errorData = JSON.parse(responseText);
+          alert(`Failed to update food: ${errorData.error || "Unknown error"}`);
+        } catch (error) {
+          console.error("Error parsing error response:", error);
+          alert("Unexpected error occurred.");
+        }
+      }
+    } catch (error) {
+      console.error("Error during update:", error);
+      alert("There was an error while updating. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="p-6 bg-white rounded-lg w-full max-w-md">
-      <h2 className="text-xl font-bold mb-4">Edit Food Details</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="name" className="font-semibold">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="p-2 border border-gray-300 rounded"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <label htmlFor="price" className="font-semibold">
-            Price
-          </label>
-          <input
-            type="number"
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(parseFloat(e.target.value))}
-            className="p-2 border border-gray-300 rounded"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <label htmlFor="description" className="font-semibold">
-            Description
-          </label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="p-2 border border-gray-300 rounded resize-none"
-            rows="3"
-          ></textarea>
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <label htmlFor="stok" className="font-semibold">
-            Stock
-          </label>
-          <input
-            type="number"
-            id="stok"
-            value={stok}
-            onChange={(e) => setStok(parseInt(e.target.value, 10))}
-            className="p-2 border border-gray-300 rounded"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full mt-4 p-2 bg-blue-500 text-white rounded font-semibold hover:bg-blue-600"
-        >
-          Save Changes
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        placeholder="Food Name"
+        className="border p-2 rounded-md"
+      />
+      <textarea
+        name="description"
+        value={formData.description}
+        onChange={handleChange}
+        placeholder="Description"
+        className="border p-2 rounded-md"
+      />
+      <input
+        type="number"
+        name="price"
+        value={formData.price}
+        onChange={handleChange}
+        placeholder="Price"
+        className="border p-2 rounded-md"
+      />
+      <input
+        type="number"
+        name="stock"
+        value={formData.stock}
+        onChange={handleChange}
+        placeholder="Stock"
+        className="border p-2 rounded-md"
+      />
+      {/* Dropdown for category selection */}
+      <select
+        name="category"
+        value={formData.category}
+        onChange={handleChange}
+        className="border p-2 rounded-md"
+      >
+        <option value="">Select Category</option>
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+        <option value="jajanan">Jajanan</option>
+      </select>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+        disabled={loading}
+      >
+        {loading ? "Saving..." : "Save"}
+      </button>
+    </form>
   );
 };
 
