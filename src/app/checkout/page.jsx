@@ -31,18 +31,49 @@ const Checkout = () => {
     setCheckoutStep(2);
   };
 
-  const handleConfirmPayment = () => {
+  // const handleConfirmPayment = () => {
+  //   if (!paymentMethod) {
+  //     alert("Please select a payment method");
+  //     return;
+  //   }
+  //   const generatedOrderCode = `ORD-${Math.floor(Math.random() * 10000)}`;
+  //   setOrderCode(generatedOrderCode);
+  //   setCheckoutStep(3);
+
+  //   // Hapus cart setelah checkout
+  //   localStorage.removeItem("cart");
+  //   setCart([]);
+  // };
+
+  const handleConfirmPayment = async () => {
     if (!paymentMethod) {
-      alert("Please select a payment method");
+      alert("Silakan pilih metode pembayaran");
       return;
     }
-    const generatedOrderCode = `ORD-${Math.floor(Math.random() * 10000)}`;
-    setOrderCode(generatedOrderCode);
-    setCheckoutStep(3);
 
-    // Hapus cart setelah checkout
-    localStorage.removeItem("cart");
-    setCart([]);
+    const response = await fetch("/api/foods/tambahOrder", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        customerName,
+        customerPhone,
+        cart,
+        paymentMethod,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setOrderCode(result.orderCode);
+      setCheckoutStep(3);
+      localStorage.removeItem("cart");
+      setCart([]);
+    } else {
+      alert("Gagal menyimpan pesanan, coba lagi.");
+    }
   };
 
   const updateCart = (updatedCart) => {
