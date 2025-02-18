@@ -17,11 +17,11 @@ const Sidebar = () => {
   const pathname = usePathname(); // Get the current path
 
   const Links = [
-    {
-      name: "Dashboard",
-      link: "/dashboard",
-      icons: <MdDashboard />,
-    },
+    // {
+    //   name: "Dashboard",
+    //   link: "/dashboard",
+    //   icons: <MdDashboard />,
+    // },
     {
       name: "Menu",
       link: "/dashboard/food",
