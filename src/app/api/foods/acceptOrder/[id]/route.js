@@ -1,8 +1,7 @@
 import { supabase } from "@/lib/db";
 
-// This is the handler for the PUT request to update the order status
 export async function PUT(req, { params }) {
-  const { id } = params;  // Getting the dynamic id from the URL
+  const { id } = params;  
 
   if (!id) {
     return new Response(
